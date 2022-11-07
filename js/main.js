@@ -1,8 +1,5 @@
 'use strict'
-/*Descrizione:
-
-
-
+/*
 Consigli del giorno:
 * Pensate prima in italiano.
 * Dividete in piccoli problemi la consegna.
@@ -61,12 +58,13 @@ btn.addEventListener('click', function(){
     //Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
     let inputNum = [];
 
-    //setTimeout(tempo(), 5000);
+    setTimeout(tempo(), 500000);
 
     //function tempo() {
     for (let i = 1; i <= numeriCasuali.length; i++) {
         inputNum.push(Number(prompt('inserisci numero')));
     }
+    //nascondi(lista)
     console.log(inputNum);
     //}
     
