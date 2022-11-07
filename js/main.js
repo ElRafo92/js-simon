@@ -20,17 +20,6 @@ function numberRandom(arrayNum, large, cap) {
     };
 };
 
-function nascondi(x) {
-    x.classList.add('display-none')
-}
-
-function inputRec(array) {
-    for (let i = 0; i < 5; i++) {
-        array.push(prompt('inserisci numero'))
-    };
-};
-
-
 /*============================
 ==============================
         MAIN
@@ -56,42 +45,34 @@ btn.addEventListener('click', function(){
     console.log(numeriCasuali)
     //Da lì parte un timer di 30 secondi.
     //Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+    const timer = 2;
+    setTimeout(function() {
+        lista.remove()
+    }, timer * 1000);   
+
     let inputNum = [];
-
-    setTimeout(tempo(), 500000);
-
-    //function tempo() {
-    for (let i = 1; i <= numeriCasuali.length; i++) {
-        inputNum.push(Number(prompt('inserisci numero')));
-    }
-    //nascondi(lista)
-    console.log(inputNum);
-    //}
-    
-
     let numeriUguali = [];
-    let numeriDiversi = [];
-
-    for (let i = 0; i <= numeriCasuali.length; i++) {
-        if (inputNum[i] === numeriCasuali[i]) {
-            numeriUguali.push(inputNum[i]);
-        } else {
-            numeriDiversi.push(inputNum[i]);
+    setTimeout(function() {
+        for (let i = 0; i < 5; i++) {
+            inputNum.push(Number(prompt('inserisci numero')));
+            if (inputNum[i] === numeriCasuali[i]) {
+                numeriUguali.push(inputNum[i]);
+            }
+        
         }
-    }
+        console.log(inputNum);
+        console.log(numeriUguali);
+
     //Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
-
-    console.log(numeriUguali);
-    console.log(numeriDiversi);
-
-    let numeri = document.querySelector('.numeri')
-    let giusti = document.querySelector('.giusti');
-    let sbagliati = document.querySelector('.sbagliati');
-
-    giusti.innerHTML = numeriUguali.length;
-    giusti.innerHTML = numeriUguali.length;
+    const numeri = document.querySelector('.numeri')
+    const score = document.querySelector('.score');
+    const giusti = document.querySelector('.giusti');
+    
+    
+    score.innerHTML = `i numeri giusti sono ${numeriUguali}`;
+    numeri.append(score);
+    giusti.innerHTML = `ne hai indovinati ${numeriUguali.length}`;
     numeri.append(giusti);
-    sbagliati.innerHTML = numeriDiversi.length;
-    numeri.append(sbagliati);
-
+    
+    }, (timer + 1) * 1000);   
 });
