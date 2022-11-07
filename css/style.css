@@ -1,0 +1,68 @@
+/*==============
+  ==============
+      RESET
+  ==============
+  ==============*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*==============
+  ==============
+    UTILITIES
+  ==============
+  ==============*/
+.container {
+    max-width: 75rem;
+    height: 100vh;
+    margin: auto;
+    padding: 3.125rem;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.border {
+    height: 6.25rem;
+    width: 6.25rem;
+    border: 0.9375rem solid red;
+    border-radius: 0.625rem;
+}
+
+.display-none {
+    visibility: hidden;
+}
+
+/*==============
+  ==============
+    COLORS
+  ==============
+  ==============*/
+.bg-container {
+    background-color: aqua;
+}
+
+.bg-elements {
+    background-color: white;
+}
+
+/*==============
+  ==============
+    STYLE
+  ==============
+  ==============*/
+.element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.875rem;
+    font-weight: 800;
+}
+
