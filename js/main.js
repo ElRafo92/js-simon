@@ -38,7 +38,7 @@ btn.addEventListener('click', function(){
     for (let i = 0; i < 5; i++) {
         let digit = document.createElement('li');
         digit.classList.add('element', 'border', 'bg-elements');
-        numberRandom(numeriCasuali, 5, 5);
+        numberRandom(numeriCasuali, 5, 100);
         digit.innerHTML = numeriCasuali[i];
         lista.append(digit);
     }
